@@ -1,0 +1,75 @@
+body {
+	background-color: #ffe0ac;		
+	font-family: 'Open Sans'; font-size: 14px;
+}
+
+.right {
+	float: right;	
+    position: relative;
+    margin: 8px;
+}
+
+#birdie {
+	width: auto;
+	max-width: 120px;
+}
+
+.kitty {
+	width: auto;
+	max-width: 200px;	
+}
+
+#kitty-want {	
+	position: relative;
+	z-index: 10;
+}
+
+#kitty-get {
+	position: relative;
+	z-index: 20;
+}
+
+#birdie.center {	
+    position: relative;
+    bottom: 0px;
+    left: 50%;
+	margin-left: -90px;
+}
+
+.user-input {		 			
+	text-align: left;
+	float: right;
+
+	color: #000;
+	background-color: #f9f9f9;		
+	border-radius: 6px;
+	padding: 8px;
+	margin: 8px;
+	vertical-align: middle;
+}
+
+.user-output {
+	text-align: left;		
+
+	background-color: #f9f9f9;
+	border-radius: 6px;
+	padding: 8px;
+	margin: 8px;
+	vertical-align: top;
+}
+
+.falling {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* JS  */ 
+
+.hidden {
+  visibility: hidden;
+}
+
+.gone {
+	display: none;
+}

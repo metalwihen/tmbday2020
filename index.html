@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BDAY</title>
+	<!-- layout styling -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='css/layout.css' rel='stylesheet'>
+ 	
+	<!-- color styling -->
+	<link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+	<link href='css/main.css' rel='stylesheet'>
+
+	<!-- animations -->
+	<link href="css/animate.css" rel="stylesheet"/>
+</head>
+<body>
+
+		<div class="layout-container">
+			<div class="layout-main">
+				<div class="user-input">
+					<p id="intro" align="left">
+						Hooman,<br/>
+						I must catch this birdie.<br/>
+						For years, it has eluded me.<br/>
+						<br/>
+						With your help, I will claim this beast,<br/>
+						and together, we will have a most marvelous feast.<br/>
+						<br/>
+						I've also taken the help of the wizard,<br/>
+						He has left incantations next to the items I need.<br/>
+						You must find these scrolls, and type in the words below,<br/>
+						so that from this dilemma, I am finally freed.<br/>
+					</p>
+					<p align="left"><button id="go" onclick="myFunction()">Click me</button></p>					
+				</div>				
+			</div>
+
+		<div class="layout-header">
+				<img id="birdie" class="right" src="assets/img/birdie.png">				
+		</div>	
+
+		<div class="layout-footer">				
+				<img id="kitty-want" class="kitty right" src="assets/img/kitty-want.png">				
+				<img id="kitty-get" class="kitty right gone" src="assets/img/kitty-get.png">
+		</div>
+
+
+			<div class="layout-side">
+				<div class="user-output">
+					<img id="fall-item-1" width="450px" src="assets/img/item-boxingbag.png" class="falling hidden">
+					<img id="fall-item-2" width="450px" src="assets/img/item-litterbox.png" class="falling hidden">
+					<img id="fall-item-3" width="450px" src="assets/img/item-catfood.png" class="falling hidden">
+					<img id="fall-item-4" width="450px" src="assets/img/item-human-on-laptop.png" class="falling hidden">
+					<img id="fall-item-5" width="450px" src="assets/img/item-fridge.png" class="falling hidden">
+					<img id="fall-item-6" width="450px" src="assets/img/item-car.png" class="falling hidden">	
+				</div>
+			</div>
+		</div>
+
+	<script type="text/javascript">
+		var count = 7;
+
+		function myFunction() {
+		  count -= 1; 
+		  if(count <= 0){		  	
+		  	return;
+		  } else if(count== 1){
+		  	winGame();		  	
+		  }
+
+		  var id = "fall-item-"+count;
+		  console.log(id);
+		  document.getElementById(id).classList.remove("hidden");
+		  document.getElementById(id).classList.add("bounceInDown");
+		  document.getElementById(id).classList.add("animated");
+		}
+
+		function playCorrect() {		  
+		  var soundplayer = new Audio("audio/correct-abracadabra.mp3");		  
+		  soundplayer.play()
+		}		 
+
+		function playWrong() {		  
+		  //var soundplayer = new Audio("audio/correct-abracadabra.mp3");
+		  var soundplayer = new Audio("assets/audio/wrong-cat-hiss.mp3");
+		  soundplayer.play()
+		}		 
+
+		function winGame(){
+			document.getElementById("birdie").classList.add("hidden");
+			document.getElementById("kitty-want").classList.add("gone");
+
+			document.getElementById("kitty-get").classList.remove("gone");
+			document.getElementById("kitty-get").classList.add("tada");
+		  	document.getElementById("kitty-get").classList.add("animated");
+		}
+	</script>
+
+</body>
+</html>

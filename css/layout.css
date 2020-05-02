@@ -1,0 +1,39 @@
+@media screen and (max-width: 720px) {
+  .layout-container {
+    width: 720px; 
+  }
+}		
+
+@media screen and (min-width: 1024px) {
+  .layout-container {
+    width: 1024px; 		    
+    position: absolute;
+    left: 50%;
+		margin-left: -512px;
+  }		   
+}
+
+.layout-container {			
+	display: grid;
+	grid-template-columns: 48% 48%;
+	grid-template-rows: auto 2fr auto;
+	grid-template-areas: "header sidebar"
+						 "main sidebar"
+						 "footer sidebar";		
+}
+
+.layout-header {
+	grid-area: header;		 			
+}
+
+.layout-footer {
+	grid-area: footer;	
+}
+
+.layout-main {
+	grid-area: main; 			
+}
+
+.layout-side {
+	grid-area: sidebar;		 
+}
