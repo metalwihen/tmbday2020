@@ -1,7 +1,55 @@
 body {
 	background-color: #ffe0ac;		
-	font-family: 'Open Sans'; font-size: 14px;
+	font-family: 'Open Sans'; 
+	font-size: 14px;
 }
+
+hr.dashed {
+  border-top: 3px dashed #ccc;
+}
+
+h1 {
+	color: #ffacb7;
+	font-family: 'Open Sans';
+	font-weight: lighter;
+}
+
+h3 {
+	font-family: 'Open Sans';
+	font-weight: 700;	
+}
+
+/*  */ 
+
+input[type=text] {
+  width: 90%;
+  padding: 6px;
+  margin: 8px;
+
+  box-sizing: border-box;  
+  border: 3px solid #ccc;
+  outline: none;
+
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+
+  font-weight: 400;
+  font-size: 14px;
+}
+
+input[type=text]:focus {
+  border: 3px solid #ffacb7;
+
+  font-weight: 700;
+  color: #ffacb7;  
+}
+
+input[type=text]::placeholder {
+  font-weight: 400;
+}
+
+
+/* Kitty, Birdie, Falling Items  */ 
 
 .right {
 	float: right;	
@@ -19,41 +67,28 @@ body {
 	max-width: 200px;	
 }
 
-#kitty-want {	
-	position: relative;
-	z-index: 10;
-}
-
-#kitty-get {
-	position: relative;
-	z-index: 20;
-}
-
-#birdie.center {	
-    position: relative;
-    bottom: 0px;
+.kitty.center {	
+    position: relative;    
     left: 50%;
-	margin-left: -90px;
+	margin-left: -100px;
 }
 
 .user-input {		 			
 	text-align: left;
-	float: right;
 
 	color: #000;
 	background-color: #f9f9f9;		
 	border-radius: 6px;
-	padding: 8px;
+	padding: 16px;
 	margin: 8px;
-	vertical-align: middle;
 }
 
 .user-output {
-	text-align: left;		
+	text-align: left;	
 
 	background-color: #f9f9f9;
 	border-radius: 6px;
-	padding: 8px;
+	padding: 16px;
 	margin: 8px;
 	vertical-align: top;
 }

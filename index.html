@@ -3,7 +3,7 @@
 <head>
 	<title>BDAY</title>
 	<!-- layout styling -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=.9, maximum-scale=12.0, minimum-scale=.25, user-scalable=yes"/>
 	<link href='css/layout.css' rel='stylesheet'>
  	
 	<!-- color styling -->
@@ -12,89 +12,129 @@
 
 	<!-- animations -->
 	<link href="css/animate.css" rel="stylesheet"/>
+	<link href="css/snackbar.css" rel="stylesheet"/>
 </head>
 <body>
 
 		<div class="layout-container">
 			<div class="layout-main">
 				<div class="user-input">
-					<p id="intro" align="left">
-						Hooman,<br/>
-						I must catch this birdie.<br/>
-						For years, it has eluded me.<br/>
-						<br/>
-						With your help, I will claim this beast,<br/>
-						and together, we will have a most marvelous feast.<br/>
-						<br/>
-						I've also taken the help of the wizard,<br/>
-						He has left incantations next to the items I need.<br/>
-						You must find these scrolls, and type in the words below,<br/>
-						so that from this dilemma, I am finally freed.<br/>
-					</p>
-					<p align="left"><button id="go" onclick="myFunction()">Click me</button></p>					
+					<div id="intro-section">
+						<p align="left">
+							Hooman,<br/>
+							I must catch this birdie.<br/>
+							For years, it has eluded me.<br/>
+							<br/>
+							With your help, I will claim this beast,<br/>
+							and together, we will have a most marvelous feast.<br/>
+							<br/>
+							I've also taken the help of the wizard,<br/>
+							He has left incantations next to the items I need.<br/>
+							You must find these scrolls, and type in its words below,<br/>
+							so that from this dilemma, I am finally freed.<br/>
+						</p>
+
+						<p align="center"><input type="text" id="incantation-input" placeholder="Type the incantation here..." /></p>		
+
+						<hr class="dashed">	
+					</div>
+
+					<div id="winner-msg" align="center" class="gone">
+						<p align="center"><h3>Thank you Hooman. You are amazing. Also...</h3></p>
+						<p align="center"><h1>A Happy Bird-day to you!</h1></p>
+					</div>									
+
+					<div id="clue-section">
+						<p align="left"><h3>I will describe the item:</h3></p>
+						<pre id="clue-item-1">
+The hooman puts me in their toy
+where most times, I can roam free
+It's not that I don't like this toy
+but rather I'm scared of where it will take me
+
+Once, this toy took me to a hell
+where white-clad hoomans did unspeakable things
+they held me down, poked my butt,
+then stabbed me - oh, did it sting!
+
+It's not that don't like <strong>this toy</strong>
+So let me say this again, if you will
+it shakes and growls and its most fun
+as long as it stays perfectly still
+						</pre>
+						<pre id="clue-item-2" class="gone">
+The hoomans are not always happy
+Sometimes, I see the hooman weep
+because <strong>their toy</strong> will sometimes blink
+and before bed time, it falls asleep
+						</pre>
+						<pre id="clue-item-3" class="gone">
+Now a days, the hooman does not play with me
+They just sit with <strong>this toy</strong> and stare
+Then, all of a sudden, 
+they will talk very loudly,
+even though no one is there. 
+						</pre>
+						<pre id="clue-item-4" class="gone">
+Sometimes when I'm sleeping
+the hoomans make lots of noise 
+they run all over the house
+lifting and moving their toys
+
+But then they shake this wonderful <strong>thing</strong>
+for which I most certainly will come out
+Then they hold me, lift me, hug me
+and then at me, they will shout
+						</pre>
+						<pre id="clue-item-5" class="gone">
+The hoomans are very mean.
+When I use <strong>it</strong>, 
+the human must lift me,
+then sniff me,
+then wet me.
+Why is the hooman so mean?
+						</pre>
+						<pre id="clue-item-6" class="gone">
+Sometimes in the morning
+the hooman goes outside
+he moves his arms
+and jumps around
+and its a state of alarm
+
+The birds fly far away,
+the trees shake and the leaves fall,
+it's fun to watch the hooman
+play with <strong>this toy</strong> so tall
+						</pre>																		
+					</div>
+
 				</div>				
 			</div>
 
 		<div class="layout-header">
+				<img id="kitty-get" class="kitty center gone" src="assets/img/kitty-get.png">
 				<img id="birdie" class="right" src="assets/img/birdie.png">				
 		</div>	
 
-		<div class="layout-footer">				
+		<div class="layout-footer">	
+				<div id="snackbar" class="gone">No! That's wrong, hooman.</div>			
 				<img id="kitty-want" class="kitty right" src="assets/img/kitty-want.png">				
-				<img id="kitty-get" class="kitty right gone" src="assets/img/kitty-get.png">
 		</div>
 
 
 			<div class="layout-side">
 				<div class="user-output">
-					<img id="fall-item-1" width="450px" src="assets/img/item-boxingbag.png" class="falling hidden">
-					<img id="fall-item-2" width="450px" src="assets/img/item-litterbox.png" class="falling hidden">
-					<img id="fall-item-3" width="450px" src="assets/img/item-catfood.png" class="falling hidden">
-					<img id="fall-item-4" width="450px" src="assets/img/item-human-on-laptop.png" class="falling hidden">
-					<img id="fall-item-5" width="450px" src="assets/img/item-fridge.png" class="falling hidden">
-					<img id="fall-item-6" width="450px" src="assets/img/item-car.png" class="falling hidden">	
+					<img id="fall-item-6" width="450px" src="assets/img/item-boxingbag.png" class="falling hidden">
+					<img id="fall-item-5" width="450px" src="assets/img/item-litterbox.png" class="falling hidden">
+					<img id="fall-item-4" width="450px" src="assets/img/item-catfood.png" class="falling hidden">
+					<img id="fall-item-3" width="450px" src="assets/img/item-human-on-laptop.png" class="falling hidden">
+					<img id="fall-item-2" width="450px" src="assets/img/item-fridge.png" class="falling hidden">
+					<img id="fall-item-1" width="450px" src="assets/img/item-car.png" class="falling hidden">	
 				</div>
 			</div>
-		</div>
+		</div>		
 
-	<script type="text/javascript">
-		var count = 7;
-
-		function myFunction() {
-		  count -= 1; 
-		  if(count <= 0){		  	
-		  	return;
-		  } else if(count== 1){
-		  	winGame();		  	
-		  }
-
-		  var id = "fall-item-"+count;
-		  console.log(id);
-		  document.getElementById(id).classList.remove("hidden");
-		  document.getElementById(id).classList.add("bounceInDown");
-		  document.getElementById(id).classList.add("animated");
-		}
-
-		function playCorrect() {		  
-		  var soundplayer = new Audio("audio/correct-abracadabra.mp3");		  
-		  soundplayer.play()
-		}		 
-
-		function playWrong() {		  
-		  //var soundplayer = new Audio("audio/correct-abracadabra.mp3");
-		  var soundplayer = new Audio("assets/audio/wrong-cat-hiss.mp3");
-		  soundplayer.play()
-		}		 
-
-		function winGame(){
-			document.getElementById("birdie").classList.add("hidden");
-			document.getElementById("kitty-want").classList.add("gone");
-
-			document.getElementById("kitty-get").classList.remove("gone");
-			document.getElementById("kitty-get").classList.add("tada");
-		  	document.getElementById("kitty-get").classList.add("animated");
-		}
-	</script>
+		<script type="text/javascript" src="js/main.js"></script>
 
 </body>
 </html>
